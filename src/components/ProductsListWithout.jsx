@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import ProductCard from './ProductCardWithout';
 import ProductCardWithout from './ProductCardWithout';
 
 function ProductsListWithout() {
-    const [products, setData] = useState(null)
-      const [loading, setLoading] = useState(true)
-      const [error, setError] = useState(null)
+    const [products, setData] = useState([]) 
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
     
       useEffect(() => {
         fetch('/products/noarticles')
