@@ -25,7 +25,7 @@ function ProductListWithout() {
           })
       }, [])
     
-      if (error) return <div>Error: {error}</div>
+      if (error) return <div>Error: {error}</div> 
       return(
         <div className="products-grid">
       {products.map(product => (

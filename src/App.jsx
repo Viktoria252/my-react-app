@@ -1,7 +1,7 @@
 import './App.css'
 import ProductList from './components/ProductList';
-import AddingForm from './components/AddingForm';
-import ProductListWithout from './components/ProductsListWithout';
+// import AddingForm from './components/AddingForm';
+// import ProductListWithout from './components/ProductsListWithout';
 
 function App() {
   return (
@@ -11,16 +11,16 @@ function App() {
       <ProductList />
     </div>
     
-    {/* <div className='addingForm'>
-    <h1>Добавление товара</h1>
-    <AddingForm />
-    </div> */}
+    // {/* <div className='addingForm'>
+    // <h1>Добавление товара</h1>
+    // <AddingForm />
+    // </div> */}
 
-    {/* <div className='productsWithoutArticles'>
-      <h1>Товары без статей</h1>
-      <ProductListWithout />
-    </div> */}
-    </>
+    // {/* <div className='productsWithoutArticles'>
+    //   <h1>Товары без статей</h1>
+    //   <ProductListWithout />
+    // </div> */}
+     </>
   )
 }
 

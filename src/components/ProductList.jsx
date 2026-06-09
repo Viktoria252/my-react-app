@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import ProductCard from './ProductCard';
 
-function ProductList(){
-const [products, setData] = useState(null)
+function ProductList() {
+  const [products, setProducts] = useState([])  // ← лучше массив, не null
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -15,7 +15,7 @@ const [products, setData] = useState(null)
         return response.json()
       })
       .then(result => {
-        setData(result)
+        setProducts(result)  // ← теперь setProducts
         setLoading(false)
       })
       .catch(err => {
@@ -23,15 +23,18 @@ const [products, setData] = useState(null)
         setLoading(false)
       })
   }, [])
-  if (loading) return <div>Загрузка...</div>;
-if (error) return <div>Ошибка: {error}</div>;
-if (!products) return null;
 
-   return(
-          <div className="products-grid">
-        {products.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-        )
+  if (loading) return <div>Загрузка...</div>
+  if (error) return <div>Ошибка: {error}</div>
+  if (!products || products.length === 0) return <div>Нет товаров</div>  // ← проверка на пустой массив
+
+  return ( <pre>{JSON.stringify(products, null, 2)}</pre>
+    // <div className="products-grid">
+    //   {products.map(product => (
+    //     <ProductCard key={product.id} product={product} />
+    //   ))}
+    // </div>
+  )
 }
+
+export default ProductList
