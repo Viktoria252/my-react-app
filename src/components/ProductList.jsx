@@ -28,12 +28,12 @@ function ProductList() {
   if (error) return <div>Ошибка: {error}</div>
   if (!products || products.length === 0) return <div>Нет товаров</div>  // ← проверка на пустой массив
 
-  return ( <pre>{JSON.stringify(products, null, 2)}</pre>
-    // <div className="products-grid">
-    //   {products.map(product => (
-    //     <ProductCard key={product.id} product={product} />
-    //   ))}
-    // </div>
+  return ( 
+    <div className="products-grid">
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
   )
 }
 

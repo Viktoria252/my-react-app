@@ -6,7 +6,7 @@ function ProductCardWithout(product) {
             <strong>Цена:</strong>
             <span>{product.price}</span> 
             ₽</p>
-            <p>
+            {/* <p>
             <strong>Уровень сложности ухода:</strong>
             {product.properties?.careLevel?.displayName}
             </p>
@@ -15,12 +15,14 @@ function ProductCardWithout(product) {
             {product.properties?.lightRequirement?.displayName}
             </p>
             <p>
-            <strong>Частота полива::</strong>
+            <strong>Частота полива:</strong>
             {product.properties?.wateringFrequency?.displayName}
             </p>
             <p>
             <strong>Безопасно для животных:</strong>{product?.properties?.petSafe ? <span>Да</span> : <span>Нет</span>}
-            </p>
+            </p> */}
         </div>
     )
 }
+
+export default ProductCardWithout

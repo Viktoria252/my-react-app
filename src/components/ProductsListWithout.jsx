@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import ProductCard from './ProductCardWithout';
+import ProductCardWithout from './ProductCardWithout';
 
-function ProductListWithout() {
-    function ProductList(){
-    const [data, setData] = useState(null)
+function ProductsListWithout() {
+    const [products, setData] = useState(null)
       const [loading, setLoading] = useState(true)
       const [error, setError] = useState(null)
     
@@ -27,11 +27,13 @@ function ProductListWithout() {
     
       if (error) return <div>Error: {error}</div> 
       return(
-        <div className="products-grid">
+       <div className="products-grid">
       {products.map(product => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCardWithout key={product.id} product={product} />
       ))}
     </div>
       )
 }
-}
+
+
+export default ProductsListWithout
