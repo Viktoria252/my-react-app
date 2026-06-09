@@ -10,7 +10,7 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/': {
+      '/products': {
         target: 'http://localhost:8084',
         changeOrigin: true
       }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import ProductCard from './ProductCard';
 
 function ProductList(){
-const [data, setData] = useState(null)
+const [products, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -23,7 +23,9 @@ const [data, setData] = useState(null)
         setLoading(false)
       })
   }, [])
-  if (error) return <div>Error: {error}</div>
+  if (loading) return <div>Загрузка...</div>;
+if (error) return <div>Ошибка: {error}</div>;
+if (!products) return null;
 
    return(
           <div className="products-grid">
