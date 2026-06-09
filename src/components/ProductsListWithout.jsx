@@ -8,7 +8,7 @@ function ProductListWithout() {
       const [error, setError] = useState(null)
     
       useEffect(() => {
-        fetch('/noarticles')
+        fetch('/products/noarticles')
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`)

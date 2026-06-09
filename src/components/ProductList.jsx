@@ -7,7 +7,7 @@ const [data, setData] = useState(null)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('/products/noarticles')
+    fetch('/products')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
