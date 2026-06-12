@@ -1,16 +1,24 @@
 function ProductCard({ product }) {
   return (
     <div className="card">
-      <h3>{product.name}</h3>
+      <h2>{product.name}</h2>
       <p>
         <strong>Цена:</strong> {product.price} ₽
       </p>
       <p>
-        <strong>Описание:</strong> {product.description?.slice(0, 100)}…
+        <strong>Описание:</strong> {product.description?.slice(0, )}...
       </p>
-      <h6>Статья об уходе</h6>
+      <h4>Статья об уходе</h4>
       <article>
-        {product.article ? product.article.slice(0, 300) + '…' : 'Нет статьи об уходе'}
+        {product.article ? (
+          <>
+            <strong>{product.article.title}</strong>
+            <p>{product.article.description?.slice(0, 150)}...</p>
+            <p>Время чтения: {product.article.readTime} мин</p>
+          </>
+        ) : (
+          <h6>Нет статьи об уходе</h6>
+        )}
       </article>
     </div>
   );

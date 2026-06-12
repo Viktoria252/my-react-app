@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react'
-import ProductCard from './ProductCard';
+import { useState, useEffect } from 'react';
+import ProductCardWithout from './ProductCardWithout';
 
-function ProductList() {
-  const [products, setProducts] = useState([])
+function ProductListWithout() {
+  const [products, setProducts] = useState([]) 
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
+    
   useEffect(() => {
-    fetch('/products')
+    fetch('/products/noarticles')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
@@ -23,20 +23,18 @@ function ProductList() {
         setLoading(false)
       })
   }, [])
-
-  const productsWithArticle = products.filter(product => product.article != null)
-
+    
   if (loading) return <div>Загрузка...</div>
   if (error) return <div>Ошибка: {error}</div>
-  if (productsWithArticle.length === 0) return <div>Нет товаров со статьями</div>
-
-  return ( 
+  if (!products || products.length === 0) return <div>Нет товаров</div>
+  
+  return(
     <div className="products-grid">
-      {productsWithArticle.map(product => (
-        <ProductCard key={product.id} product={product} />
+      {products.map(product => (
+        <ProductCardWithout key={product.id} product={product} />
       ))}
     </div>
   )
 }
 
-export default ProductList
+export default ProductListWithout

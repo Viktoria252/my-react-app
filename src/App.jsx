@@ -1,26 +1,26 @@
 import './App.css'
 import ProductList from './components/ProductList';
 // import AddingForm from './components/AddingForm';
-import ProductsListWithout from './components/ProductsListWithout';
+// import ProductListWithout from './components/ProductListWithout';
 
 function App() {
   return (
     <>
-    {/* <div className='fullProducts'>
+    <div className='fullProducts'>
       <h1>Товары со статьями</h1>
       <ProductList />
-    </div> */}
+    </div>
     
-     {/* <div className='addingForm'>
-    // <h1>Добавление товара</h1>
-    // <AddingForm />
-    // </div> */}
+    {/* <div className='addingForm'>
+    <h1>Добавление товара</h1>
+    <AddingForm />
+    </div> */}
 
-    <div className='productsWithoutArticles'>
+    {/* <div className='productWithoutArticles'>
        <h1>Товары без статей</h1>
-       <ProductsListWithout />
-     </div>
-     </>
+       <ProductListWithout />
+     </div> */}
+    </>
   )
 }
 

@@ -13,6 +13,10 @@ export default defineConfig({
       '/products': {
         target: 'http://localhost:8084',
         changeOrigin: true
+      },
+      '/articles': {
+        target: 'http://localhost:8084',
+        changeOrigin: true
       }
     }
   }
